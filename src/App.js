@@ -11,9 +11,6 @@ const App = () => {
   const [progress, setProgress] = useState(0)
   const pageSize = 9
   const apiKey = process.env.REACT_APP_API_KEY
-  const updateProgress = (progress) => {
-    setProgress(progress)
-  }
   return (
     <Router>
       <Navbar />
@@ -24,7 +21,7 @@ const App = () => {
           path='/'
           element={
             <News
-              setProgress={updateProgress}
+              setProgress={setProgress}
               key='general'
               pageSize={pageSize}
               country='in'
@@ -38,7 +35,7 @@ const App = () => {
           path='/business'
           element={
             <News
-              setProgress={updateProgress}
+              setProgress={setProgress}
               key='business'
               pageSize={pageSize}
               country='in'
@@ -52,7 +49,7 @@ const App = () => {
           path='/entertainment'
           element={
             <News
-              setProgress={updateProgress}
+              setProgress={setProgress}
               key='entertainment'
               pageSize={pageSize}
               country='in'
@@ -66,7 +63,7 @@ const App = () => {
           path='/health'
           element={
             <News
-              setProgress={updateProgress}
+              setProgress={setProgress}
               key='health'
               pageSize={pageSize}
               country='in'
@@ -80,7 +77,7 @@ const App = () => {
           path='/science'
           element={
             <News
-              setProgress={updateProgress}
+              setProgress={setProgress}
               key='science'
               pageSize={pageSize}
               country='in'
@@ -94,7 +91,7 @@ const App = () => {
           path='/sports'
           element={
             <News
-              setProgress={updateProgress}
+              setProgress={setProgress}
               key='sports'
               pageSize={pageSize}
               country='in'
@@ -108,7 +105,7 @@ const App = () => {
           path='/technology'
           element={
             <News
-              setProgress={updateProgress}
+              setProgress={setProgress}
               key='technology'
               pageSize={pageSize}
               country='in'

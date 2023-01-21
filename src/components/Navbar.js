@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom'
 
 const Navbar = () => {
   return (
-    <nav className='navbar navbar-expand-lg bg-dark navbar-dark border-bottom border-light border-opacity-10'>
+    <nav className='navbar fixed-top navbar-expand-lg bg-dark navbar-dark border-bottom border-light border-opacity-10'>
       <div className='container-fluid'>
         <Link className='navbar-brand' to='/'>
           NewsBee

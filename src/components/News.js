@@ -28,18 +28,19 @@ const News = ({ setProgress, pageSize, country, category, apiKey }) => {
 
   useEffect(() => {
     updateNews()
+    // eslint-disable-next-line
   }, [])
 
-  const scrollToTop = () => {
-    document.body.scrollTop = 0
-    document.documentElement.scrollTop = 0
-  }
+  // const scrollToTop = () => {
+  //   document.body.scrollTop = 0
+  //   document.documentElement.scrollTop = 0
+  // } 
 
   const fetchMoreData = async () => {
-    setPage(page + 1)
     const url = `https://newsapi.org/v2/top-headlines?country=${country}&category=${category}&apiKey=${apiKey}&page=${
       page + 1
     }&pageSize=${pageSize}`
+    setPage(page + 1)
     const res = await fetch(url)
     const data = await res.json()
     setArticles(articles.concat(data.articles))
@@ -48,7 +49,7 @@ const News = ({ setProgress, pageSize, country, category, apiKey }) => {
 
   return (
     <>
-      <h2 className='text-center mt-5'>
+      <h2 className='text-center' style={{ marginTop: '6rem' }}>
         NewsBee – Top {category[0].toUpperCase() + category.slice(1)} Headlines
       </h2>
       {loading && <Spinner />}
